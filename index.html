@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEAM MANGO</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* --- Estilos generales --- */
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#111;
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+    position: relative;
+}
+
+header{
+    background:#ff6a00;
+    padding:20px;
+    position: relative;
+    z-index:2;
+}
+
+header h1{
+    margin:0;
+    font-size:40px;
+}
+
+.logo{
+    margin-top:30px;
+    position: relative;
+    z-index:2;
+}
+
+.logo img{
+    width:180px;
+    position: relative;
+    z-index:2;
+}
+
+/* --- Partículas de energía --- */
+.particles{
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    top:0;
+    left:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
+}
+
+.particles div{
+    position: absolute;
+    width:5px;
+    height:5px;
+    background:#ff6a00;
+    border-radius:50%;
+    opacity:0.7;
+    animation: float 4s linear infinite;
+}
+
+@keyframes float{
+    0%{transform: translateY(0) translateX(0);}
+    50%{transform: translateY(-100px) translateX(50px);}
+    100%{transform: translateY(-200px) translateX(-50px);}
+}
+
+/* --- Secciones --- */
+.section{
+    margin:40px;
+}
+
+.creadores, .informacion-juego, .redes-sociales, .descripcion-final, .contacto{
+    background:#1c1c1c;
+    padding:30px;
+    border-radius:10px;
+    display:inline-block;
+    margin-bottom:30px;
+    max-width:500px;
+    transition: transform 0.3s;
+}
+
+.creadores:hover, .informacion-juego:hover, .redes-sociales:hover, .descripcion-final:hover, .contacto:hover{
+    transform: scale(1.03);
+}
+
+.creadores h2, .informacion-juego h2, .redes-sociales h2, .descripcion-final h2, .contacto h2{
+    color:#ffa500;
+}
+
+.icon{
+    font-size:30px;
+    color:#ff6a00;
+    margin-right:10px;
+}
+
+/* --- Barras de progreso --- */
+.progreso-barra{
+    background:#333;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0;
+    height:20px;
+}
+
+.progreso{
+    height:100%;
+    background:#ff6a00;
+    width:0%;
+    border-radius:20px;
+    transition: width 2s ease-in-out;
+}
+
+/* --- Redes sociales tipo tarjetas épicas --- */
+.redes-sociales{
+    max-width:600px;
+    position: relative;
+}
+
+.redes-sociales p{
+    margin-bottom:20px;
+}
+
+.redes-sociales .tarjetas{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    position: relative;
+}
+
+.redes-sociales .tarjeta{
+    background:#222;
+    padding:20px 30px;
+    border-radius:15px;
+    width:150px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position: relative;
+    z-index:2;
+    animation: floatCard 3s ease-in-out infinite alternate;
+}
+
+.redes-sociales .tarjeta i{
+    font-size:40px;
+    color:#ff6a00;
+    margin-bottom:10px;
+    transition: transform 0.3s;
+}
+
+.redes-sociales .tarjeta:hover{
+    transform: translateY(-15px) scale(1.1) rotate(-5deg);
+    box-shadow: 0 0 20px #ff6a00;
+}
+
+.redes-sociales .tarjeta:hover i{
+    transform: rotate(15deg) scale(1.3);
+}
+
+.redes-sociales .tarjeta span{
+    font-size:16px;
+    font-weight:bold;
+    color:white;
+}
+
+/* Animación de tarjetas flotantes */
+@keyframes floatCard{
+    0%{transform: translateY(0);}
+    100%{transform: translateY(-10px);}
+}
+
+/* --- Descripción final animada --- */
+.descripcion-final p{
+    font-size:16px;
+    line-height:1.5;
+}
+
+.descripcion-final .resplandor{
+    position: relative;
+    display: inline-block;
+    color: #ffa500;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    animation: glowPulse 2s infinite alternate, pulseText 1.5s infinite alternate;
+}
+
+@keyframes glowPulse{
+    0%{text-shadow: 0 0 5px #ff6a00, 0 0 10px #ff6a00;}
+    50%{text-shadow: 0 0 10px #ff6a00, 0 0 20px #ffa500;}
+    100%{text-shadow: 0 0 5px #ff6a00, 0 0 15px #ff6a00;}
+}
+
+@keyframes pulseText{
+    0%{transform: scale(1);}
+    50%{transform: scale(1.02);}
+    100%{transform: scale(1);}
+}
+
+/* --- Formulario de contacto --- */
+.contacto form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.contacto input, .contacto textarea{
+    padding:10px;
+    width:80%;
+    margin:10px 0;
+    border-radius:5px;
+    border:none;
+}
+
+.contacto button{
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    background:#ff6a00;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition: all 0.3s;
+}
+
+.contacto button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ff6a00;
+}
+
+/* Footer */
+footer{
+    margin-top:50px;
+    padding:20px;
+    background:#000;
+    font-size:14px;
+}
+
+/* Responsivo */
+@media (max-width:600px){
+    .redes-sociales .tarjetas{
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Partículas detrás del logo -->
+<div class="particles" id="particles"></div>
+
+<header>
+<h1>TEAM MANGO 🥭</h1>
+<p>Comunidad de creadores y entretenimiento</p>
+</header>
+
+<div class="logo">
+<img src="logo.png" alt="Logo Team Mango">
+</div>
+
+<div class="section">
+
+<!-- Sección de creadores -->
+<div class="creadores">
+<h2><i class="fa-solid fa-user icon"></i> Creadores</h2>
+<p><strong>Creador Principal:</strong><br>Ángel Arvelo</p>
+<p><strong>Segundo Creador:</strong><br>Ernesto Sosa</p>
+</div>
+
+<!-- Sección de información del juego -->
+<div class="informacion-juego">
+<h2><i class="fa-solid fa-gamepad icon"></i> Información del Juego</h2>
+<p>Este juego es un <strong>Fangame</strong> desarrollado por un talentoso equipo de <strong>45 personas 👤</strong>.</p>
+
+<div>
+<p><i class="fa-solid fa-people-group icon"></i> Equipo completo:</p>
+<div class="progreso-barra">
+    <div class="progreso" style="width:90%;"></div>
+</div>
+</div>
+
+<div>
+<p><i class="fa-solid fa-gears icon"></i> Desarrollo del juego:</p>
+<div class="progreso-barra">
+    <div class="progreso" style="width:80%;"></div>
+</div>
+</div>
+
+<p>¡Sigue nuestro proyecto y descubre todo lo que TEAM MANGO tiene para ofrecer!</p>
+</div>
+
+<!-- Sección de redes sociales tipo tarjetas épicas -->
+<div class="redes-sociales">
+<h2><i class="fa-brands fa-youtube icon"></i> Redes Sociales</h2>
+<p>Encuéntranos en nuestras redes - ¡una pequeña comunidad creciendo cada día! 🥭</p>
+
+<div class="tarjetas">
+    <a href="https://www.youtube.com/@TEAMMANGO" target="_blank" class="tarjeta">
+        <i class="fa-brands fa-youtube"></i>
+        <span>YouTube</span>
+    </a>
+
+    <a href="#" target="_blank" class="tarjeta">
+        <i class="fa-brands fa-discord"></i>
+        <span>Discord</span>
+    </a>
+
+    <a href="#" target="_blank" class="tarjeta">
+        <i class="fa-brands fa-facebook"></i>
+        <span>Facebook</span>
+    </a>
+</div>
+</div>
+
+<!-- Sección de descripción final animada -->
+<div class="descripcion-final">
+<h2><i class="fa-solid fa-info icon"></i> Sobre TEAM MANGO</h2>
+<p class="resplandor">Este es Team 🥭 y en esta página web se verán a cada detalle los personajes del juego, su historia y proceso hasta ahora.</p>
+<p class="resplandor">Aparte puedes seguirnos en otras redes sociales como Facebook y YouTube.</p>
+</div>
+
+<!-- Sección de contacto -->
+<div class="contacto">
+<h2><i class="fa-solid fa-envelope icon"></i> Contacto</h2>
+<p>Si quieres enviarnos un mensaje, usa este formulario y llegará a nuestros desarrolladores.</p>
+
+<form action="https://formspree.io/f/xjvdwqyr" method="POST">
+  <input type="text" name="name" placeholder="Tu nombre" required>
+  <input type="email" name="_replyto" placeholder="Tu correo" required>
+  <textarea name="message" placeholder="Escribe tu mensaje..." required></textarea>
+  <button type="submit">Enviar</button>
+</form>
+
+<p style="margin-top:10px; font-size:14px;">Los mensajes se enviarán al Gmail de los desarrolladores: <strong>essharwayshollowknight@gmail.com</strong></p>
+</div>
+
+</div>
+
+<footer>
+© 2026 TEAM MANGO - Todos los derechos reservados
+</footer>
+
+<script>
+// Animación de progreso al cargar la página
+window.addEventListener('load', () => {
+    document.querySelectorAll('.progreso').forEach(bar => {
+        bar.style.width = bar.getAttribute('style').match(/width:(\d+)%/)[1] + '%';
+    });
+});
+
+// Generar partículas de energía
+const particlesContainer = document.getElementById('particles');
+for(let i=0; i<50; i++){
+    const p = document.createElement('div');
+    p.style.left = Math.random()*100 + '%';
+    p.style.top = Math.random()*300 + 'px';
+    p.style.width = Math.random()*5+2+'px';
+    p.style.height = p.style.width;
+    p.style.animationDuration = 2 + Math.random()*3 + 's';
+    particlesContainer.appendChild(p);
+}
+</script>
+
+</body>
+</html>
