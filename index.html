@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TEAM MANGO</title>
+
+<meta name="description" content="TEAM MANGO es una comunidad de creadores que desarrolla el fangame Hollow Shardway inspirado en Hollow Knight.">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#111;
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+background:#ff6a00;
+padding:20px;
+}
+
+header h1{
+margin:0;
+font-size:40px;
+}
+
+/* LOGO */
+
+.logo{
+margin-top:30px;
+}
+
+.logo img{
+width:220px;
+animation:logoFloat 3s ease-in-out infinite;
+filter:drop-shadow(0 0 15px #ff6a00);
+}
+
+@keyframes logoFloat{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+/* PARTICULAS */
+
+.particles{
+position:absolute;
+width:100%;
+height:300px;
+top:0;
+left:0;
+overflow:hidden;
+pointer-events:none;
+}
+
+.particles div{
+position:absolute;
+width:5px;
+height:5px;
+background:#ff6a00;
+border-radius:50%;
+opacity:0.7;
+animation:float 4s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-200px);}
+}
+
+/* SECCIONES */
+
+.section{
+margin:40px;
+}
+
+.box{
+background:#1c1c1c;
+padding:30px;
+border-radius:10px;
+display:inline-block;
+margin-bottom:30px;
+max-width:600px;
+transition:0.3s;
+}
+
+.box:hover{
+transform:scale(1.03);
+}
+
+h2{
+color:#ffa500;
+}
+
+.icon{
+font-size:30px;
+color:#ff6a00;
+margin-right:10px;
+}
+
+/* BARRAS */
+
+.progreso-barra{
+background:#333;
+border-radius:20px;
+overflow:hidden;
+margin:15px 0;
+height:20px;
+}
+
+.progreso{
+height:100%;
+background:#ff6a00;
+width:0%;
+transition:width 2s;
+}
+
+/* REDES */
+
+.tarjetas{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.tarjeta{
+background:#222;
+padding:20px;
+border-radius:15px;
+width:150px;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+.tarjeta:hover{
+transform:scale(1.1);
+box-shadow:0 0 15px #ff6a00;
+}
+
+.tarjeta i{
+font-size:40px;
+color:#ff6a00;
+}
+
+/* CONTACTO */
+
+.contacto input,
+.contacto textarea{
+padding:10px;
+width:80%;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+.contacto button{
+padding:10px 20px;
+border:none;
+border-radius:5px;
+background:#ff6a00;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+footer{
+margin-top:40px;
+padding:20px;
+background:#000;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="particles" id="particles"></div>
+
+<header>
+
+<h1>TEAM MANGO 🥭</h1>
+<p>Comunidad de creadores y videojuegos</p>
+
+</header>
+
+<div class="logo">
+<img src="logo-team-mango.png" alt="Logo TEAM MANGO">
+</div>
+
+<div class="section">
+
+<!-- CREADORES -->
+
+<div class="box">
+
+<h2><i class="fa-solid fa-user icon"></i> Creadores</h2>
+
+<p><strong>Creador principal</strong><br>Ángel Arvelo</p>
+<p><strong>Segundo creador</strong><br>Ernesto Sosa</p>
+
+</div>
+
+<!-- INFORMACION JUEGO -->
+
+<div class="box">
+
+<h2><i class="fa-solid fa-gamepad icon"></i> Información del juego</h2>
+
+<p>Este proyecto es un <b>fangame</b> desarrollado por un equipo de <b>45 personas</b>.</p>
+
+<p>Equipo completo</p>
+
+<div class="progreso-barra">
+<div class="progreso" style="width:90%"></div>
+</div>
+
+<p>Desarrollo del juego</p>
+
+<div class="progreso-barra">
+<div class="progreso" style="width:80%"></div>
+</div>
+
+</div>
+
+<!-- REDES -->
+
+<div class="box">
+
+<h2><i class="fa-brands fa-youtube icon"></i> Redes sociales</h2>
+
+<div class="tarjetas">
+
+<a href="https://youtube.com/@hollowknightsharways_oficial" target="_blank" class="tarjeta">
+<i class="fa-brands fa-youtube"></i>
+<p>YouTube</p>
+</a>
+
+<a href="https://discord.gg/" target="_blank" class="tarjeta">
+<i class="fa-brands fa-discord"></i>
+<p>Discord</p>
+</a>
+
+<a href="#" target="_blank" class="tarjeta">
+<i class="fa-brands fa-facebook"></i>
+<p>Facebook</p>
+</a>
+
+</div>
+
+</div>
+
+<!-- WIKI -->
+
+<div class="box">
+
+<h2><i class="fa-solid fa-book icon"></i> Wiki Hollow Shardway</h2>
+
+<p>
+<b>Hollow Shardway</b> es un fangame inspirado en el universo del videojuego Hollow Knight.
+El proyecto es desarrollado por la comunidad creativa <b>TEAM MANGO</b>.
+</p>
+
+<p>
+La historia sigue a <b>Pablo</b>, un guerrero que regresa al reino de su familia para descubrir el secreto del Cordyceps.
+</p>
+
+<p>
+Durante su aventura explorará templos antiguos, luchará contra criaturas peligrosas y descubrirá fragmentos perdidos del reino.
+</p>
+
+</div>
+
+<!-- CONTACTO -->
+
+<div class="box contacto">
+
+<h2><i class="fa-solid fa-envelope icon"></i> Contacto</h2>
+
+<form action="https://formspree.io/f/xjvdwqyr" method="POST">
+
+<input type="text" name="name" placeholder="Tu nombre" required>
+
+<input type="email" name="_replyto" placeholder="Tu correo" required>
+
+<textarea name="message" placeholder="Escribe tu mensaje..." required></textarea>
+
+<button type="submit">Enviar</button>
+
+</form>
+
+<p>Los mensajes llegan a: <b>essharwayshollowknight@gmail.com</b></p>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 TEAM MANGO
+
+</footer>
+
+<script>
+
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.progreso').forEach(bar=>{
+    bar.style.width=bar.getAttribute('style').match(/width:(\d+)%/)[1]+'%';
+  });
+});
+
+const container=document.getElementById('particles');
+for(let i=0;i<50;i++){
+  let p=document.createElement('div');
+  p.style.left=Math.random()*100+'%';
+  p.style.top=Math.random()*300+'px';
+  p.style.animationDuration=2+Math.random()*3+'s';
+  container.appendChild(p);
+}
+
+</script>
+
+</body>
+</html>
